@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/pink heart.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aolin Xu - Personal Website</title>
+    <link rel="stylesheet" href="assets/global.css">
+    <style>
+      body { 
+        margin: 0; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        height: 90vh; 
+        font-family: Arial, sans-serif; 
+      }
+      .container {
+        text-align: center;
+        font-size: 50px;
+      }
+      .subtext {
+        font-size: 12px;
+      }
+      .button-container {
+        margin-top: 30px;
+      }
+      .start-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        Happy 4 Year Anniversary My Love
+      </div>
+      <div class="subtext">
+        (Click the button below, and enjoy our journey)
+      </div>
+      <div class="button-container">
+        <button 
+          class="start-button" 
+          onclick="navigateTo('menu.html')"
+        >
+          Start
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function navigateTo(page) {
+        window.location.href = page;
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+

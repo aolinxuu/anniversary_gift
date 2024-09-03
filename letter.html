@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/pink heart.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter</title>
+    <link rel="stylesheet" href="assets/global.css">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .back-button {
+        position: absolute;
+        cursor: pointer;
+        width: 50px;
+        top: 30px;
+        left: 30px;
+      }
+      .message-container {
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+      }
+      .message {
+        color: black;
+        font-weight: bold;
+      }
+      .message2 {
+        position: absolute;
+        top: 110px;
+        right: 0px;
+        color: black;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="public/arrow.svg" class="back-button" onclick="navigateTo('menu.html')" />
+    <div class="message-container">
+      <span id="text1" class="message"></span>
+      <span id="text2" class="message2"></span>
+    </div>
+
+    <script>
+      const messages = [
+        'Dear Reinier, Happy 4 year anniversary.',
+        'Love, Aolin'
+      ];
+
+      let currentMessageIndex = 0;
+      let isCancelled = false;
+
+      function typeCharacter(message, index, elementId, callback) {
+        if (!isCancelled && index < message.length) {
+          document.getElementById(elementId).textContent += message.charAt(index);
+          setTimeout(() => typeCharacter(message, index + 1, elementId, callback), 100);
+        } else if (callback) {
+          setTimeout(callback, 100); 
+        }
+      }
+
+      function startTyping() {
+        if (currentMessageIndex === 0) {
+          typeCharacter(messages[0], 0, 'text1', () => {
+            currentMessageIndex = 1;
+            typeCharacter(messages[1], 0, 'text2');
+          });
+        }
+      }
+
+      function navigateTo(page) {
+        window.location.href = page;
+      }
+
+      startTyping();
+
+      // Cleanup to avoid any possible memory leaks
+      window.onbeforeunload = () => {
+        isCancelled = true;
+      };
+    </script>
+  </body>
+</html>

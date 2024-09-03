@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/pink heart.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Spent Together</title>
+    <link rel="stylesheet" href="assets/global.css">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .timer-container {
+        text-align: center;
+        position: relative;
+        top: 150px;
+      }
+      h1 {
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+      }
+      .time-value {
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+      }
+      .time-unit {
+        font-size: 15px;
+      }
+      .back-button {
+        position: absolute;
+        cursor: pointer;
+        width: 50px;
+        top: 30px;
+        left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="timer-container">
+      <h1>Time Spent Together</h1>
+      <p><span id="years" class="time-value"></span></p>
+      <p><span class="time-unit">years</span></p>
+      <p><span id="days" class="time-value"></span></p>
+      <p><span class="time-unit">days</span></p>
+      <p><span id="hours" class="time-value"></span></p>
+      <p><span class="time-unit">hours</span></p>
+      <p><span id="minutes" class="time-value"></span></p>
+      <p><span class="time-unit">minutes</span></p>
+      <p><span id="seconds" class="time-value"></span></p>
+      <p><span class="time-unit">seconds</span></p>
+    </div>
+    <img src="public/arrow.svg" class="back-button" onclick="navigateTo('menu.html')" />
+
+    <script>
+      function calculateTimeSince(startDate) {
+        const now = new Date();
+        const then = new Date(startDate);
+        const difference = now.getTime() - then.getTime();
+
+        const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365));
+        let remainder = difference % (1000 * 60 * 60 * 24 * 365);
+        const days = Math.floor(remainder / (1000 * 60 * 60 * 24));
+        remainder = remainder % (1000 * 60 * 60 * 24);
+        const hours = Math.floor(remainder / (1000 * 60 * 60));
+        remainder = remainder % (1000 * 60 * 60);
+        const minutes = Math.floor(remainder / (1000 * 60));
+        const seconds = Math.floor(remainder % (1000 * 60) / 1000);
+
+        return { years, days, hours, minutes, seconds };
+      }
+
+      function updateTimer() {
+        const timeSince = calculateTimeSince('2020-09-02');
+        document.getElementById('years').textContent = timeSince.years;
+        document.getElementById('days').textContent = timeSince.days;
+        document.getElementById('hours').textContent = timeSince.hours;
+        document.getElementById('minutes').textContent = timeSince.minutes;
+        document.getElementById('seconds').textContent = timeSince.seconds;
+      }
+
+      function navigateTo(page) {
+        window.location.href = page;
+      }
+
+      // Update the timer every second
+      setInterval(updateTimer, 1000);
+      updateTimer(); // Initialize with the current time
+    </script>
+  </body>
+</html>

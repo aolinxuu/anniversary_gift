@@ -1,0 +1,48 @@
+/* global.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Optima, sans-serif;
+  color: black;
+  background-image: url('../public/background1.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* div {
+  min-height: 100vh; /* Ensures that the container takes up the full viewport height */
+
+.collage {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  padding: 25px 250px 0px;
+  overflow-y: auto;
+  height: calc(100vh - 100px);
+}
+
+.collage-image {
+  width: 100%;
+  height: auto;
+  border: 3px solid white; /* white border like a photo */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.6); /* subtle shadow */
+}

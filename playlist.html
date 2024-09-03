@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/pink heart.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <link rel="stylesheet" href="assets/global.css">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+      }
+      .header-container {
+        position: absolute;
+        top: 89px;
+        left: 340px;
+      }
+      .iframe-container {
+        position: absolute;
+        top: 190px;
+        left: 420px;
+      }
+      iframe {
+        width: 400px;
+        height: 450px;
+        padding: 20px;
+        border: none;
+        box-shadow: none;
+      }
+      .back-button {
+        position: absolute;
+        cursor: pointer;
+        width: 50px;
+        top: 30px;
+        left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1>Songs that remind me of you...</h1> 
+    </div>
+    <div class="iframe-container">
+      <iframe
+        src="https://open.spotify.com/embed/playlist/3xoildbL0vKkWuK2pg8U4g?utm_source=generator"
+        allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture"
+        loading="lazy">
+      </iframe> 
+      <iframe 
+        src="https://open.spotify.com/embed/playlist/4N6bKQqHF0IMZJIVg8hcuS?utm_source=generator" 
+        allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture" 
+        loading="lazy">
+      </iframe>
+    </div>
+    <img
+      src="public/arrow.svg"
+      class="back-button"
+      onclick="navigateTo('menu.html')"
+    />
+
+    <script>
+      function navigateTo(page) {
+        window.location.href = page;
+      }
+    </script>
+  </body>
+</html>

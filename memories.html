@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/pink heart.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories</title>
+    <link rel="stylesheet" href="assets/global.css">
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      .collage {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px;
+      }
+      .collage-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+      }
+      .back-button {
+        position: absolute;
+        cursor: pointer;
+        width: 50px;
+        top: 30px;
+        left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="collage">
+      <img src="/120.jpeg" alt="Memories 0" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 1" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 2" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 3" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 4" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 5" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 6" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 7" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 8" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 9" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 10" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 11" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 12" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 13" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 14" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 15" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 16" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 17" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 18" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 19" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 20" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 21" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 22" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 23" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 24" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 25" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 26" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 27" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 28" class="collage-image" />
+      <img src="/120.jpeg" alt="Memories 29" class="collage-image" />
+    </div>
+    <img src="public/arrow.svg" class="back-button" onclick="navigateTo('menu.html')" />
+
+    <script>
+      function navigateTo(page) {
+        window.location.href = page;
+      }
+    </script>
+  </body>
+</html>

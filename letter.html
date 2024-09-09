@@ -25,14 +25,21 @@
         transform: translateX(-50%);
         width: 500px;
       }
-      .message {
+      .message2 {
+        position: absolute;
         color: black;
         font-weight: bold;
       }
-      .message2 {
+      .message3 {
         position: absolute;
         top: 110px;
         right: 0px;
+        color: black;
+        font-weight: bold;
+      }
+      .message {
+        position: absolute;
+        bottom: 40px;
         color: black;
         font-weight: bold;
       }
@@ -43,12 +50,14 @@
     <div class="message-container">
       <span id="text1" class="message"></span>
       <span id="text2" class="message2"></span>
+      <span id="text3" class="message3"></span>
     </div>
 
     <script>
       const messages = [
-        'Dear Reinier, Happy 4 year anniversary.',
-        'Love, Aolin'
+        'Dear Reinier,',
+        ' Happy 4 year anniversary. I am so excited to enter this new chapter of life with you. Thank you for continuing this journey with me and being the best partner one can ask for.',
+        'I love you forever and always, Aolin'
       ];
 
       let currentMessageIndex = 0;
@@ -67,7 +76,10 @@
         if (currentMessageIndex === 0) {
           typeCharacter(messages[0], 0, 'text1', () => {
             currentMessageIndex = 1;
-            typeCharacter(messages[1], 0, 'text2');
+            typeCharacter(messages[1], 0, 'text2', () => {
+              currentMessageIndex = 2;
+              typeCharacter(messages[2], 0, 'text3');
+            });
           });
         }
       }

@@ -33,8 +33,8 @@ button {
 .collage {
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 47px;
   padding: 25px 250px 0px;
   overflow-y: auto;
   height: calc(100vh - 100px);
